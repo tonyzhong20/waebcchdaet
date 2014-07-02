@@ -33,7 +33,7 @@ module.exports.responseMsg = function (err, result)
     returnObj.data.createTime = result.xml.CreateTime[0];
     returnObj.data.msgType = result.xml.MsgType[0];
     //TODO:catch the error here
-    require('./model/message/'+result.xml.MsgType[0]).buildModel(returnObj, result);
+    require('/model/message/'+result.xml.MsgType[0]).buildModel(returnObj, result);
 
     return returnObj;
 }

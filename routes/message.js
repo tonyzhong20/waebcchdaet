@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var crypto = require('crypto')
 var xml2js = require('xml2js');
-var messageHelper = require('./helper/message')
+var messageHelper = require('/helper/message')
 
 ////////////////////////////need to move to another file
 var TOKEN = "fuzhong"
