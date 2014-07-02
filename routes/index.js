@@ -31,7 +31,7 @@ function checkSignature(signature, timestamp,nonce)
 function responseMsg(err, result)
 {
     var returnObj = {};
-    returnObj.page = 'index';
+    returnObj.page = 'message_text';
     returnObj.model = {};
     returnObj.model.toUser = result.xml.FromUserName[0];
     returnObj.model.fromUser = result.xml.ToUserName[0];
