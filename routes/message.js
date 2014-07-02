@@ -1,49 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var crypto = require('crypto')
 var xml2js = require('xml2js');
 var messageHelper = require('../helper/message')
-
-////////////////////////////need to move to another file
-var TOKEN = "fuzhong"
-function checkSignature(signature, timestamp,nonce)
-{
-
-    var tempArr = [];
-   
-    tempArr.push(TOKEN);
-    tempArr.push(timestamp);
-    tempArr.push(nonce);
-    tempArr.sort();
-    
-    var shasum = crypto.createHash('sha1');
-    shasum.update(tempArr.join(''));
-    
-    var tmpStr = shasum.digest('hex');
-
-    if( tmpStr == signature ){
-        return true;      
-    }else{
-        return false;
-    }
-}
-
-///////////////////////////////
-function responseMsg(err, result)
-{
-    var returnObj = {};
-    returnObj.page = 'message_text';
-    returnObj.model = {};
-    returnObj.model.toUser = result.xml.FromUserName[0];
-    returnObj.model.fromUser = result.xml.ToUserName[0];
-    returnObj.model.createTime = result.xml.CreateTime[0];
-    returnObj.model.msgType = result.xml.MsgType[0];
-    returnObj.model.content = 'echo:'+ result.xml.Content;
-
-    return returnObj;
-}
-
-
 
 ///////////////////////////////
 /* POST home page. */
