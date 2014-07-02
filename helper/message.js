@@ -34,6 +34,8 @@ exports.responseMsg = function (err, result)
     returnObj.data.msgType = result.xml.MsgType[0];
     //TODO:catch the error here
     require('../model/message/'+result.xml.MsgType[0]).buildModel(returnObj, result);
-    console.log(returnObj);
+
+    returnObj.page = 'message/' + returnObj.page;
+
     return returnObj;
 }

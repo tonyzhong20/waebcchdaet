@@ -13,8 +13,8 @@ router.post('/', function(req, res) {
             var respObj = messageHelper.responseMsg(err, result);
 
             console.log(respObj);
-            
-            res.render(respObj.page, respObj.model);
+
+            res.render(respObj.page, respObj.data);
         });
     }
     else
