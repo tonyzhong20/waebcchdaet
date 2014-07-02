@@ -11,6 +11,9 @@ router.post('/', function(req, res) {
         var parseString = require('xml2js').parseString;
         parseString(req.body, {trim: true}, function (err, result) {
             var respObj = messageHelper.responseMsg(err, result);
+
+            console.log(returnObj);
+            
             res.render(respObj.page, respObj.model);
         });
     }
