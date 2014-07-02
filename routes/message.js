@@ -20,7 +20,7 @@ function checkSignature(signature, timestamp,nonce)
     shasum.update(tempArr.join(''));
     
     var tmpStr = shasum.digest('hex');
-    console.log(tmpStr,signature)
+
     if( tmpStr == signature ){
         return true;      
     }else{
@@ -39,7 +39,7 @@ function responseMsg(err, result)
     returnObj.model.createTime = result.xml.CreateTime[0];
     returnObj.model.msgType = result.xml.MsgType[0];
     returnObj.model.content = 'echo:'+ result.xml.Content;
-    console.log(returnObj)
+
     return returnObj;
 }
 
