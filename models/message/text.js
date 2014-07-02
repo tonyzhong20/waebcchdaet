@@ -1,6 +1,6 @@
 exports.buildModel = function (returnObj, result)
 {
-    returnObj.page = 'text';
+    returnObj.view = 'text';
 
     returnObj.data.msgType = 'text';
 

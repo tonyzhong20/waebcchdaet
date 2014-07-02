@@ -4,6 +4,7 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var configWorker = require('./workers/configWorker')
 
 var message = require('./routes/message');
 //var users = require('./routes/users');
@@ -55,6 +56,8 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+configWorker.readConfig();
 
 app.listen(3000);
 

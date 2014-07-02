@@ -33,9 +33,9 @@ exports.responseMsg = function (err, result)
     returnObj.data.createTime = result.xml.CreateTime[0];
     returnObj.data.msgType = result.xml.MsgType[0];
     //TODO:catch the error here
-    require('../model/message/'+result.xml.MsgType[0]).buildModel(returnObj, result);
+    require('../models/message/'+result.xml.MsgType[0]).buildModel(returnObj, result);
 
-    returnObj.page = 'message/' + returnObj.page;
+    returnObj.view = 'message/' + returnObj.view;
 
     return returnObj;
 }

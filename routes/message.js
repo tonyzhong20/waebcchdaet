@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var xml2js = require('xml2js');
-var messageHelper = require('../helper/message')
+var messageHelper = require('../helpers/message')
 
 ///////////////////////////////
 /* POST home page. */
@@ -14,7 +14,7 @@ router.post('/', function(req, res) {
 
             console.log(respObj);
 
-            res.render(respObj.page, respObj.data);
+            res.render(respObj.view, respObj.data);
         });
     }
     else
