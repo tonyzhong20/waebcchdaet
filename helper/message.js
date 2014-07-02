@@ -2,7 +2,7 @@ var crypto = require('crypto')
 
 ////////////////////////////need to move to another file
 var TOKEN = "fuzhong"
-module.exports.checkSignature = function (signature, timestamp,nonce)
+exports.checkSignature = function (signature, timestamp,nonce)
 {
 
     var tempArr = [];
@@ -24,7 +24,7 @@ module.exports.checkSignature = function (signature, timestamp,nonce)
     }
 }
 
-module.exports.responseMsg = function (err, result)
+exports.responseMsg = function (err, result)
 {
     var returnObj = {'data':{}};
 

@@ -1,4 +1,4 @@
-module.exports.buildModel = function (returnObj, result)
+exports.buildModel = function (returnObj, result)
 {
     returnObj.page = 'message_text';
 
