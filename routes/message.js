@@ -6,11 +6,10 @@ var messageHelper = require('../helper/message')
 ///////////////////////////////
 /* POST home page. */
 router.post('/', function(req, res) {
-    if (checkSignature(req.query.signature,req.query.timestamp,req.query.nonce))
+    if (messageHelper.checkSignature(req.query.signature,req.query.timestamp,req.query.nonce))
     {
         var parseString = require('xml2js').parseString;
         parseString(req.body, {trim: true}, function (err, result) {
-            //res.send(responseMsg(err, result))
             var respObj = messageHelper.responseMsg(err, result);
             res.render(respObj.page, respObj.model);
         });
