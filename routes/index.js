@@ -36,8 +36,8 @@ function responseMsg(err, result)
     returnObj.model.toUser = result.xml.FromUserName[0];
     returnObj.model.fromUser = result.xml.ToUserName[0];
     returnObj.model.createTime = result.xml.CreateTime[0];
-    returnObj.model.msgType = 'echo:'+ result.xml.MsgType[0];
-    returnObj.model.content = result.xml.Content;
+    returnObj.model.msgType = result.xml.MsgType[0];
+    returnObj.model.content = 'echo:'+ result.xml.Content;
     console.log(returnObj)
     return returnObj;
 }
