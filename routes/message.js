@@ -12,7 +12,7 @@ router.post('/', function(req, res) {
         parseString(req.body, {trim: true}, function (err, result) {
             var respObj = messageHelper.responseMsg(err, result);
 
-            console.log(returnObj);
+            console.log(respObj);
             
             res.render(respObj.page, respObj.model);
         });
