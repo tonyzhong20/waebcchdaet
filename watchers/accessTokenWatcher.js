@@ -25,8 +25,8 @@ function refreshToken(isForce)
 		var url = util.format(configWatcher.config.grantAccessTokenURL,
 							  configWatcher.config.appID,
 							  configWatcher.config.appsecret);
-		
-		https.get(url, function(res) {
+		url = configWatcher.config.apiHostName + url;
+		https.get('https://' + url, function(res) {
 	
 			var data = '';
 			res.on('data', function(d) {
@@ -46,7 +46,7 @@ function refreshToken(isForce)
 				
 			});
 		}).on('error', function(e) {
-			console.error("Grant access token error:" + e);
+			console.error("Get access token " + e);
 		});
 		
 	}

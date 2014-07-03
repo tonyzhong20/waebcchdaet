@@ -4,5 +4,5 @@ block content
   h1= title
   p Welcome to #{title}
   form(method = 'post')
-    textArea !{JSON.stringify(menu)}
+    textArea(name = 'menujson') !{JSON.stringify(menu)}
     button submit
