@@ -6,8 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 ///////////////////init/////////////////////
-accessTokenWatcher = require('./watchers/accessTokenWatcher');
-configWatcher = require('./watchers/configWatcher');
+require('./watchers/accessTokenWatcher');
+require('./watchers/configWatcher');
 ////////////////////////////////////////////
 var service = require('./routes/service');
 var admin = require('./routes/admin');

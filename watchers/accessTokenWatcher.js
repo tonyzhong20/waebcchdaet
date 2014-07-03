@@ -2,6 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var https = require('https');
 var util = require('util');
+var configWatcher = require('./configWatcher')
 /////////////////////////////////////////////////////
 var accessTokenConfig = {};
 var accessTokenPath = path.join(__dirname, '../accessToken.json');
