@@ -1,5 +1,6 @@
 exports.buildModel = function (returnObj, result)
 {
+	console.dir(result)
     returnObj.view = 'image';
 
     returnObj.data.msgType = 'image';
