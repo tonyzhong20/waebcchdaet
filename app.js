@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
@@ -19,7 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(favicon());
-app.use(logger('dev'));
+app.use(logger({format: 'dev', stream: fs.createWriteStream('./public/logger.log', {flags: 'a'})}));
 app.use(bodyParser.json());
 app.use(bodyParser.text({type:'text/xml'}));
 app.use(bodyParser.urlencoded({
@@ -63,6 +64,6 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(3000);
+//app.listen(3000);
 
 module.exports = app;
