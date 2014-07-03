@@ -2,13 +2,11 @@ var express = require('express');
 var router = express.Router();
 var xml2js = require('xml2js');
 var crypto = require('crypto')
-//var accessTokenWatcher = require('../watchers/accessTokenWatcher');
 
 function checkSignature (signature, timestamp,nonce)
 {
     var tempArr = [];
-   
-    tempArr.push(accessTokenWatcher.config.token);
+    tempArr.push(configWatcher.config.token);
     tempArr.push(timestamp);
     tempArr.push(nonce);
     tempArr.sort();
