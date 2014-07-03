@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var xml2js = require('xml2js');
 var crypto = require('crypto')
-var accessTokenWatcher = require('../watchers/accessTokenWatcher');
+//var accessTokenWatcher = require('../watchers/accessTokenWatcher');
 
 function checkSignature (signature, timestamp,nonce)
 {
