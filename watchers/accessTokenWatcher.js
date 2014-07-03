@@ -26,7 +26,7 @@ function refreshToken(isForce)
 							  configWatcher.config.appID,
 							  configWatcher.config.appsecret);
 		url = configWatcher.config.apiHostName + url;
-		https.get('https://' + url, function(res) {
+		https.get(url, function(res) {
 	
 			var data = '';
 			res.on('data', function(d) {
