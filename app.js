@@ -9,7 +9,8 @@ var configWorker = require('./workers/configWorker')
 var message = require('./routes/message');
 //var users = require('./routes/users');
 
-var app = express();
+//set global
+app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

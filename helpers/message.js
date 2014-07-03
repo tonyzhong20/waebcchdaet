@@ -1,5 +1,6 @@
 var crypto = require('crypto')
 
+
 ////////////////////////////need to move to another file
 var TOKEN = "fuzhong"
 exports.checkSignature = function (signature, timestamp,nonce)

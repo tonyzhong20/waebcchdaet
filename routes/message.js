@@ -29,7 +29,6 @@ router.get('/', function(req, res) {
     var echostr = req.query.echostr;
     var signature = req.query.signature;
     
-    
     if (messageHelper.checkSignature(signature,req.query.timestamp,req.query.nonce))
     {
         if (typeof(echostr) == "undefined") 
