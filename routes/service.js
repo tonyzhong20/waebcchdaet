@@ -6,10 +6,9 @@ var accessTokenWatcher = require('../watchers/accessTokenWatcher');
 
 function checkSignature (signature, timestamp,nonce)
 {
-
     var tempArr = [];
    
-    tempArr.push(accessTokenWatcher.token);
+    tempArr.push(accessTokenWatcher.config.token);
     tempArr.push(timestamp);
     tempArr.push(nonce);
     tempArr.sort();
@@ -67,6 +66,7 @@ router.post('/', function(req, res) {
 router.get('/', function(req, res) {
     var echostr = req.query.echostr;
     var signature = req.query.signature;
+    
     
     if (checkSignature(signature,req.query.timestamp,req.query.nonce))
     {
