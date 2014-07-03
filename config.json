@@ -1,8 +1,6 @@
 {
-    'token' : 'fuzhong',
-    'appID' : 'wx9139106faa3d3081',
-    'appsecret' : '4d30f6cd013c87dfca2b9af2ec14aa13',
-    'accessToken' : '',
-    'grantTokenURL' = 'https://api.wechat.com/cgi-bin/token?grant_type=client_credential&appid={0}&secret={1}'
-    'accessTokenGenerateTime' : '',
+    "token": "fuzhong",
+    "appID": "wx9139106faa3d3081",
+    "appsecret": "4d30f6cd013c87dfca2b9af2ec14aa13",
+    "grantAccessTokenURL": "https://api.wechat.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s"
 }

@@ -4,13 +4,15 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var configWorker = require('./workers/configWorker')
 
-var message = require('./routes/message');
-//var users = require('./routes/users');
+///////////////////init/////////////////////
+require('./watchers/accessTokenWatcher');
+require('./watchers/configWatcher');
+////////////////////////////////////////////
+var service = require('./routes/service');
+var admin = require('./routes/admin');
 
-//set global
-app = express();
+var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,8 +26,8 @@ app.use(bodyParser.text({type:'text/xml'}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', message);
-//app.use('/users', users);
+app.use('/service', service);
+app.use('/admin', admin);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,7 +60,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
-configWorker.readConfig();
 
 app.listen(3000);
 
