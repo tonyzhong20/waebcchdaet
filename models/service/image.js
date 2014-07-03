@@ -10,7 +10,5 @@ exports.buildModel = function (returnObj, result)
 
     returnObj.data.mediaID = 'echo:'+ result.xml.MediaID[0];
     
-    console.log(result.xml.PicUrl[0]);
-    
-    console.log(result.xml.MediaID[0]);
+    console.log(result);
 }
