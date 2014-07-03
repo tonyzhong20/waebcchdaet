@@ -2,6 +2,8 @@ var fs = require('fs');
 var path = require('path');
 var https = require('https');
 /////////////////////////////////////////////////////
+var config = {};
+
 
 var configPath = path.join(__dirname, '../config.json');
 fs.watchFile(configPath, function (curr, prev) {
@@ -17,7 +19,8 @@ function readConfig()
 	app.set('appID',data.appID);
 	app.set('appsecret',data.appsecret);
 	app.set('accessToken',data.accessToken);
-	var accessTokenGenerateTime = data.accessTokenGenerateTime;
+	
+	accessTokenGenerateTime = data.accessTokenGenerateTime;
 }
 
 
