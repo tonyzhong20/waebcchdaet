@@ -2,7 +2,7 @@
     "token": "fuzhong",
     "appID": "wx9139106faa3d3081",
     "appsecret": "4d30f6cd013c87dfca2b9af2ec14aa13",
-    "apiHostName":"api.wechat.com",
+    "apiHostName":"https://api.wechat.com",
     "grantAccessTokenURL": "/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s",
     "createMenuURL" : "/cgi-bin/menu/create?access_token=%s"  
 }
