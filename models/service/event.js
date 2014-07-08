@@ -1,6 +1,8 @@
 exports.buildModel = function (returnObj, result)
 {
-    returnObj.view = 'event';
+    console.log("Hi. Thanks for following the official account!");
+	
+	returnObj.view = 'event';
 
     returnObj.data.msgType = 'event';
 
