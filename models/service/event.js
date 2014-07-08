@@ -8,5 +8,5 @@ exports.buildModel = function (returnObj, result)
     
     if (event == 'subscribe')
     	{returnObj.data.content = 'Thank you for following the official account.';}
-    else {}
+    else { }
 }
