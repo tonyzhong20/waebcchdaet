@@ -11,7 +11,6 @@ var accessTokenWatcher = require('../watchers/accessTokenWatcher');
 /* POST home page. */
 router.post('/', function(req, res) {
 	var menuJSON = req.body.menujson;
-	console.log(menuJSON)
 	var options = {
 			  hostname: configWatcher.config.apiHostName,
 			  path: util.format(configWatcher.config.createMenuURL,accessTokenWatcher.config.accessToken),
@@ -43,6 +42,7 @@ router.post('/', function(req, res) {
 	req.write(menuJSON + '\n');
 	req.end();
 	res.send('done');
+	console.log("Thanks for joining the account!");
 });
 
 /* GET home page. */
