@@ -1,6 +1,6 @@
 exports.buildModel = function (returnObj, result)
 {	
-	returnObj.view = 'event';
+	returnObj.view = 'text';
 
     returnObj.data.msgType = 'text';
  
