@@ -6,7 +6,7 @@ exports.buildModel = function (returnObj, result)
  
     returnObj.data.event = result.xml.Event[0];
      
-    returnObj.data.content = 'Thanks for subscribing!'+ result.xml.Content;
+    returnObj.data.content = 'Thanks for subscribing!';
     
     //result.xml.Event[0] = 'Hi. Thanks for following the official account!';
 }
