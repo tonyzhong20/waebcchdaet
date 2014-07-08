@@ -7,6 +7,9 @@ exports.buildModel = function (returnObj, result)
     returnObj.data.event = result.xml.Event[0];
     
     if (event == 'subscribe')
-    	{returnObj.data.content = 'Thank you for following the official account.';}
-    else { }
+    	{
+    	returnObj.data.content = 'Thank you for following the official account.';
+    	return returnObj;
+    	}
+    else return null;
 }
