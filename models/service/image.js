@@ -6,5 +6,5 @@ exports.buildModel = function (returnObj, result)
     
     returnObj.data.picUrl = result.xml.PicUrl[0];
  
-    returnObj.data.mediaID = result.xml.MediaID;
+    returnObj.data.mediaID = result.xml.MediaID.PicUrl[0];
 }
