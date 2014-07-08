@@ -4,7 +4,7 @@ exports.buildModel = function (returnObj, result)
 
     returnObj.data.msgType = 'event';
  
-    returnObj.data.event = result.xml.Event;
+    returnObj.data.event = result.xml.Event[0];
     
-    result.xml.Event = 'Hi. Thanks for following the official account!';
+    //result.xml.Event[0] = 'Hi. Thanks for following the official account!';
 }
