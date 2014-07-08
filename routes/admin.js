@@ -42,7 +42,6 @@ router.post('/', function(req, res) {
 	req.write(menuJSON + '\n');
 	req.end();
 	res.send('done');
-	console.log("Thanks for joining the account!");
 });
 
 /* GET home page. */
