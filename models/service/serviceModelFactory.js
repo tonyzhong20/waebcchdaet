@@ -8,7 +8,7 @@ exports.make = function (returnObj, result)
     returnObj.data.createTime = result.xml.CreateTime[0];
     
     //TODO:catch the error here
-    returnObj = require('../models/service/'+ msgType).buildModel(returnObj, result);
+    returnObj = require('./'+ msgType).buildModel(returnObj, result);
     
     return returnObj;
 }

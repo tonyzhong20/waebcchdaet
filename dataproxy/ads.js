@@ -24,7 +24,7 @@ function get(callback)
 	          parseString(body, {stripPrefix:true,trim: true}, function (err, result) {
 	        	  clearXMLJSON(result);
 	        	  callback(result['ad:ads']['ad:ad']);
-	        	  console.dir(result['ad:ads']['ad:ad'][0]);
+	        	  //console.dir(result['ad:ads']['ad:ad'][0]);
 	          });
 	      } else {
 	          console.log('error: '+ res.statusCode);
