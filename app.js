@@ -7,8 +7,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 ///////////////////init/////////////////////
-require('./watchers/accessTokenWatcher');
 require('./watchers/configWatcher');
+require('./watchers/accessTokenWatcher');
+require('./watchers/sourceDataWatcher').refresh();
 ////////////////////////////////////////////
 var service = require('./routes/service');
 var admin = require('./routes/admin');

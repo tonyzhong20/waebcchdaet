@@ -1,13 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var xml2js = require('xml2js');
-var crypto = require('crypto')
+var crypto = require('crypto');
+
+var serviceModelFactory = require('../models/service/serviceModelFactory');
 var configWatcher = require('../watchers/configWatcher');
 
 function checkSignature (signature, timestamp,nonce)
 {
     var tempArr = [];
-    tempArr.push(configWatcher.config.token);
+    tempArr.push(configWatcher.wechatConfig().token);
     tempArr.push(timestamp);
     tempArr.push(nonce);
     tempArr.sort();
@@ -24,21 +26,6 @@ function checkSignature (signature, timestamp,nonce)
     }
 };
 
-function responseMsg(err, result)
-{
-    var returnObj = {'data':{}};
-
-    returnObj.data.toUser = result.xml.FromUserName[0];
-    returnObj.data.fromUser = result.xml.ToUserName[0];
-    returnObj.data.createTime = result.xml.CreateTime[0];
-    returnObj.data.msgType = result.xml.MsgType[0];
-    //TODO:catch the error here
-    returnObj = require('../models/service/'+result.xml.MsgType[0]).buildModel(returnObj, result);
-    if(returnObj != null) {
-    	returnObj.view = 'service/' + returnObj.view;
-    }
-    return returnObj;
-};
 
 
 ///////////////////////////////
@@ -48,12 +35,17 @@ router.post('/', function(req, res) {
     {
         var parseString = require('xml2js').parseString;
         parseString(req.body, {trim: true}, function (err, result) {
-            var respObj = responseMsg(err, result);
+            var respObj = serviceModelFactory.make(err, result);
             if(respObj != null) {
             	console.log(respObj);
-            	res.render(respObj.view, respObj.data);
+            	res.render('service/' + respObj.view, respObj.data);
             }
-            else res.send("\n");
+            else 
+            {
+            	console.log("Service not cover:");
+            	console.dir(result);
+            	res.send("\n");
+            }
         });
     }
     else
