@@ -1,13 +1,10 @@
 exports.buildModel = function (returnObj, result)
-{
-	console.dir(result);
-	
-    returnObj.view = 'image';
+{		
+	returnObj.view = 'image';
 
     returnObj.data.msgType = 'image';
     
-    returnObj.data.picUrl = 'echo:' + result.xml.PicUrl[0];
+    returnObj.data.picUrl = result.xml.PicUrl[0];
  
-    returnObj.data.mediaID = 'echo:'+ result.xml.MediaID[0];
-    
+    returnObj.data.mediaID = result.xml.MediaID.PicUrl[0];
 }

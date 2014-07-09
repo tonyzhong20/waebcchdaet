@@ -33,10 +33,10 @@ function responseMsg(err, result)
     returnObj.data.createTime = result.xml.CreateTime[0];
     returnObj.data.msgType = result.xml.MsgType[0];
     //TODO:catch the error here
-    require('../models/service/'+result.xml.MsgType[0]).buildModel(returnObj, result);
-
-    returnObj.view = 'service/' + returnObj.view;
-
+    returnObj = require('../models/service/'+result.xml.MsgType[0]).buildModel(returnObj, result);
+    if(returnObj != null) {
+    	returnObj.view = 'service/' + returnObj.view;
+    }
     return returnObj;
 };
 
@@ -49,10 +49,11 @@ router.post('/', function(req, res) {
         var parseString = require('xml2js').parseString;
         parseString(req.body, {trim: true}, function (err, result) {
             var respObj = responseMsg(err, result);
-
-            console.log(respObj);
-
-            res.render(respObj.view, respObj.data);
+            if(respObj != null) {
+            	console.log(respObj);
+            	res.render(respObj.view, respObj.data);
+            }
+            else res.send("\n");
         });
     }
     else

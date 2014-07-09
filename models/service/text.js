@@ -4,6 +4,7 @@ exports.buildModel = function (returnObj, result)
 
     returnObj.data.msgType = 'text';
 
-    returnObj.data.content = 'echo:'+ result.xml.Content;
-
+    returnObj.data.content = 'You just wrote: '+ result.xml.Content;
+    
+    return returnObj;
 }

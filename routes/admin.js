@@ -11,7 +11,6 @@ var accessTokenWatcher = require('../watchers/accessTokenWatcher');
 /* POST home page. */
 router.post('/', function(req, res) {
 	var menuJSON = req.body.menujson;
-	console.log(menuJSON)
 	var options = {
 			  hostname: configWatcher.wechatConfig().apiHostName,
 			  path: util.format(configWatcher.wechatConfig().createMenuURL,accessTokenWatcher.config().accessToken),
