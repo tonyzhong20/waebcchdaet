@@ -27,12 +27,12 @@ function refreshToken(isForce)
 							  configWatcher.wechatConfig().appsecret);
 		url = configWatcher.wechatConfig().apiHostName + url;
 		https.get(url, function(res) {
-			//TODO: should check Json
-			if(res.headers['content-type'].indexOf("html") > 0)
+			if(res.statusCode != 200)
 			{
 				console.log("Access token refresh failed");
 				return;
 			}
+			
 			var data = '';
 			res.on('data', function(d) {
 				data += d;
