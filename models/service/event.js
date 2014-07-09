@@ -1,6 +1,6 @@
 exports.buildModel = function (returnObj, result)
 {	
-	console.log(returnObj);
+	returnObj.data.event = result.xml.Event[0];
 	console.log(returnObj.data.event);
     if (returnObj.data.event == 'subscribe')
     {
