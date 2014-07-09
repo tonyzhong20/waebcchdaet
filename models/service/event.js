@@ -1,5 +1,6 @@
 exports.buildModel = function (returnObj, result)
 {	
+	console.log(returnObj.data.event);
     if (returnObj.data.event == 'subscribe')
     {
 
