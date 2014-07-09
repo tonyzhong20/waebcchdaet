@@ -1,12 +1,13 @@
 exports.buildModel = function (returnObj, result)
 {	
-	returnObj.view = 'text';
+	returnObj.view = 'news';
 
     returnObj.data.msgType = 'news';
     
-    if (result.xml.Content == 'news')
+    if (result.xml.Content == 'News')
     {
     	returnObj.view = 'news';
+    	console.log('testing');
     }
     
     //returnObj.data.articleCount
