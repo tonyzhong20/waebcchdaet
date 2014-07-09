@@ -7,7 +7,7 @@ var configWatcher = require('../watchers/configWatcher');
 function checkSignature (signature, timestamp,nonce)
 {
     var tempArr = [];
-    tempArr.push(configWatcher.config.token);
+    tempArr.push(configWatcher.wechatConfig().token);
     tempArr.push(timestamp);
     tempArr.push(nonce);
     tempArr.sort();

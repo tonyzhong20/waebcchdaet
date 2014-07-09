@@ -17,13 +17,10 @@ function readConfig()
 }
 
 
-function init()
-{
-	setWatch();
-	readConfig();
-	console.log('Init: Config loaded');
-}
+setWatch();
+readConfig();
+console.log('Init: Config loaded');
 
-init();
 
-exports.config = config;
+exports.wechatConfig = function(){ return config.wechat;};
+exports.datasourceConfig = function(){ return config.datasource;};

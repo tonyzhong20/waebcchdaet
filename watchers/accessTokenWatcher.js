@@ -22,12 +22,17 @@ function refreshToken(isForce)
 	  (accessTokenConfig.accessTokenExpire - 60000))
 	{
 	    
-		var url = util.format(configWatcher.config.grantAccessTokenURL,
-							  configWatcher.config.appID,
-							  configWatcher.config.appsecret);
-		url = configWatcher.config.apiHostName + url;
+		var url = util.format(configWatcher.wechatConfig().grantAccessTokenURL,
+							  configWatcher.wechatConfig().appID,
+							  configWatcher.wechatConfig().appsecret);
+		url = configWatcher.wechatConfig().apiHostName + url;
 		https.get(url, function(res) {
-	
+			//TODO: should check Json
+			if(res.headers['content-type'].indexOf("html") > 0)
+			{
+				console.log("Access token refresh failed");
+				return;
+			}
 			var data = '';
 			res.on('data', function(d) {
 				data += d;
@@ -69,4 +74,4 @@ function init()
 init();
 
 exports.refreshToken = refreshToken;
-exports.config = accessTokenConfig;
+exports.config = function(){ return accessTokenConfig;};
