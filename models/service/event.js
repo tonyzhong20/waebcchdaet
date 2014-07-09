@@ -1,8 +1,8 @@
 exports.buildModel = function (returnObj, result)
 {	
-	returnObj.data.event = result.xml.Event[0];
-	console.log(returnObj.data.event);
-    if (returnObj.data.event == 'subscribe')
+	var event = result.xml.Event[0];
+	
+    if (event == 'subscribe')
     {
 
     	returnObj.view = 'text';
@@ -12,5 +12,8 @@ exports.buildModel = function (returnObj, result)
     	
     	return returnObj;
 	}
-    else return null;
+    else 
+	{
+    	return null;
+	}
 }

@@ -7,9 +7,15 @@ exports.buildModel = function (returnObj, result)
     if (result.xml.Content == 'News')
     {
     	returnObj.view = 'news';
-    	console.log('testing');
     }
     
+    returnObj.data.title = '';
+    
+    returnObj.data.description = '';
+    
+    returnObj.data.picUrl = result.xml.PicUrl[0];
+    
+    returnObj.data.url = result.xml.Url[0];
     //returnObj.data.articleCount
     
     //returnObj.data.articles
