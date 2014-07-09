@@ -34,10 +34,12 @@ function responseMsg(err, result)
     returnObj.data.msgType = result.xml.MsgType[0];
     //TODO:catch the error here
     returnObj = require('../models/service/'+result.xml.MsgType[0]).buildModel(returnObj, result);
-    if(returnObj != null)
+    if(returnObj != null) {
     	returnObj.view = 'service/' + returnObj.view;
+    	return returnObj;
+    }
 
-    return returnObj;
+    
 };
 
 
