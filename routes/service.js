@@ -36,10 +36,8 @@ function responseMsg(err, result)
     returnObj = require('../models/service/'+result.xml.MsgType[0]).buildModel(returnObj, result);
     if(returnObj != null) {
     	returnObj.view = 'service/' + returnObj.view;
-    	return returnObj;
     }
-
-    
+    return returnObj;
 };
 
 
