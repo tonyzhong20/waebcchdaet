@@ -8,7 +8,8 @@
 	    "createMenuURL" : "/cgi-bin/menu/create?access_token=%s"
 	},
     "datasource" : {
-    	"apiRoot" : "ecg-api.gumtree.co.za/api/ads",
+    	"apiRoot" : "ecg-api.gumtree.co.za/api/",
+    	"apiAds" : "ads",
     	"username" : "wechat",
     	"password" : "GuMTree!rOcKWeChat67"
     }

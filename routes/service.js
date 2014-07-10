@@ -3,7 +3,7 @@ var router = express.Router();
 var xml2js = require('xml2js');
 var crypto = require('crypto');
 
-var serviceModelFactory = require('../models/service/serviceModelFactory');
+var serviceModelFactory = require('../serviceprocessor/serviceProcessorFactory');
 var configWatcher = require('../watchers/configWatcher');
 
 function checkSignature (signature, timestamp,nonce)

@@ -2,17 +2,18 @@ var request = require('request');
 var http = require('http');
 var xml2js = require('xml2js');
 
-var configWatcher = require('../watchers/configWatcher');
+var config = require('../watchers/configWatcher').datasourceConfig();
 /////////////////////////////////////////////////////
 
-function get(callback)
+function get(callback,paramStr)
 {
+	var uri = 'http://' + config.apiRoot + config.apiAds + (paramStr ? '?'+paramStr:'');
 	var options = {
-		  uri: 'http://' + configWatcher.datasourceConfig().apiRoot,
+		  uri: uri,
 		  jar : true,
 		  auth: {
-		      'user': configWatcher.datasourceConfig().username,
-		      'pass': configWatcher.datasourceConfig().password,
+		      'user': config.username,
+		      'pass': config.password,
 		      'sendImmediately': false
 		  }	
 	};
@@ -23,7 +24,10 @@ function get(callback)
 	    	  var parseString = require('xml2js').parseString;
 	          parseString(body, {stripPrefix:true,trim: true}, function (err, result) {
 	        	  clearXMLJSON(result);
-	        	  callback(result['ad:ads']['ad:ad']);
+	        	  if(callback)
+	        	  {
+	        		  callback(result['ad:ads']['ad:ad']);
+	        	  }
 	        	  //console.dir(result['ad:ads']['ad:ad'][0]);
 	          });
 	      } else {

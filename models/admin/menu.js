@@ -4,13 +4,8 @@ exports.model = {
     	     "button":[
     	               {	
     	                    "type":"click",
-    	                    "name":"Daily Song",
-    	                    "key":"V1001_TODAY_MUSIC"
-    	                },
-    	                {
-    	                     "type":"click",
-    	                     "name":" Artist Profile",
-    	                     "key":"V1001_TODAY_SINGER"
+    	                    "name":"Latest Ads",
+    	                    "key":"LATEST_ADS"
     	                }]
             }
 }
