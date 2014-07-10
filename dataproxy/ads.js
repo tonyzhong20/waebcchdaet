@@ -28,7 +28,7 @@ function get(callback,paramStr)
 	        	  {
 	        		  callback(result['ad:ads']['ad:ad']);
 	        	  }
-	        	  //console.dir(result['ad:ads']['ad:ad'][0]);
+	        	  console.dir(result['ad:ads']['ad:ad'][0]);
 	          });
 	      } else {
 	          console.log('error: '+ res.statusCode);

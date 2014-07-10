@@ -14,3 +14,7 @@ function refresh()
 
 
 exports.refresh = refresh;
+exports.getLatestAds = function()
+{
+	return latestAds;
+}
