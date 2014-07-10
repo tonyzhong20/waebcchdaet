@@ -13,9 +13,10 @@ exports.buildModel = function (returnObj, result)
     
     returnObj.data.description = '';
     
-    returnObj.data.picUrl = result.xml.PicUrl[0];
+    returnObj.data.picUrl = result.xml.PicUrl;
     
-    returnObj.data.url = result.xml.Url[0];
+    returnObj.data.url = result.xml.Url;
+    
     //returnObj.data.articleCount
     
     //returnObj.data.articles
