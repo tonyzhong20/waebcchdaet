@@ -1,6 +1,6 @@
 exports.buildModel = function (returnObj, result)
 {
-	var content = result.xml.Content;
+	var content = result.xml.Content[0];
 	
 	if(content.indexOf("test") > 0)
 	{
@@ -10,13 +10,17 @@ exports.buildModel = function (returnObj, result)
 	    data.msgType = 'news';
 	    
 	    var latestAds = require('../watchers/sourceDataWatcher').getLatestAds();
-	    data.ArticleCount = latestAds.length;
+	    var length = latestAds.length;
+	    data.ArticleCount = length;
 	    data.Articles = [];
-	    for (ad in latestAds) {
+	    for (var i = 0 ; i < length ; i++) {
+	    	var ad = latestAds[i];
+	    	console.dir(ad)
+	    	
 	    	data.Articles.push(
 	    		{
-	    			Title : ad["ad:title"] ,
-	    			Description : ad["ad:description"]
+	    			Title : ad["ad:title"][0] ,
+	    			Description : ad["ad:description"][0]
 	    			//PicUrl : ad["pic:pictures"][0] ,
 	    			//Url : ad["ad:title"] ,
 	    		}
