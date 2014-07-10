@@ -2,7 +2,7 @@ exports.buildModel = function (returnObj, result)
 {
 	var content = result.xml.Content;
 	
-	if(content.indexOf("test"))
+	if(content.indexOf("test") > 0)
 	{
 		returnObj.view = 'richmedia';
 		
