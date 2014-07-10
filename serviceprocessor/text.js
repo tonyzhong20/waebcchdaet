@@ -19,8 +19,8 @@ exports.buildModel = function (returnObj, result)
 	    	
 	    	data.Articles.push(
 	    		{
-	    			Title : ad["ad:title"][0] ,
-	    			Description : ad["ad:description"][0]
+	    			Title : ad["ad:title"][0].substr(0,10),
+	    			Description : ad["ad:description"][0].substr(0,10)
 	    			//PicUrl : ad["pic:pictures"][0] ,
 	    			//Url : ad["ad:title"] ,
 	    		}
