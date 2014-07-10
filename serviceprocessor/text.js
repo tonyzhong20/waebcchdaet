@@ -10,7 +10,7 @@ exports.buildModel = function (returnObj, result)
 	    data.msgType = 'news';
 	    
 	    var latestAds = require('../watchers/sourceDataWatcher').getLatestAds();
-	    var length = latestAds.length;
+	    var length = (latestAds.length > 10 ? 10 : latestAds.length);
 	    data.ArticleCount = length;
 	    data.Articles = [];
 	    for (var i = 0 ; i < length ; i++) {
