@@ -1,12 +1,20 @@
 var proxyAds = require('../dataproxy/ads');
 /////////////////////////////////////////////////////
-var accessTokenConfig = {};
+var latestAds = null;
 
 function refresh()
 {
 	//TODO:
-	proxyAds.get(function(){});
+	proxyAds.get(function(data){
+		latestAds = data;
+	});
+	
+	setTimeout(refresh, 120000);
 }
 
 
 exports.refresh = refresh;
+exports.getLatestAds = function()
+{
+	return latestAds;
+}
