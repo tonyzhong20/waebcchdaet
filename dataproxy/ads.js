@@ -44,6 +44,7 @@ function convertJSON(adArr)
 		var ad = adArr[i];
 		
 		returnAd.title = ad["ad:title"][0];
+		returnAd.desc = ad["ad:description"][0].substr(0,10);
 		
 		var picsNode = ad["pic:pictures"][0]["pic:picture"];
     	if(picsNode)
@@ -77,7 +78,6 @@ function convertJSON(adArr)
 			}
 		}
 	}
-
 	return returnAds;
 }
 
