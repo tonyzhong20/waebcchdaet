@@ -8,6 +8,7 @@ var config = require('../watchers/configWatcher').datasourceConfig();
 function get(callback,params)
 {
 	var uri = 'http://' + config.apiRoot + params;
+	
 	var options = {
 		  uri: uri,
 		  jar : true,

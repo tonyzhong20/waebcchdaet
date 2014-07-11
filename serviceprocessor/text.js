@@ -4,7 +4,7 @@ exports.buildModel = function (returnObj, result)
 	
 	if(content.indexOf("test") > 0)
 	{
-		returnObj.view = 'richmedia';
+		returnObj.view = 'news';
 		
 		var data = returnObj.data;
 	    data.msgType = 'news';

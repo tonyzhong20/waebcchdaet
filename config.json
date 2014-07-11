@@ -9,7 +9,7 @@
 	},
     "datasource" : {
     	"apiRoot" : "ecg-api.gumtree.co.za/api/",
-    	"api_latestAds" : "?size=20&ad-status=ACTIVE&sortType=DATE_DESCENDING&pictureRequired=true",
+    	"api_latestAds" : "ads/?size=20&ad-status=ACTIVE&sortType=DATE_DESCENDING&pictureRequired=true",
     	"username" : "wechat",
     	"password" : "GuMTree!rOcKWeChat67"
     }
