@@ -7,7 +7,7 @@ exports.make = function (returnObj, result)
     returnObj.data.fromUser = result.xml.ToUserName[0];
     returnObj.data.createTime = result.xml.CreateTime[0];
     
-    //TODO:catch the error here
+    //TODO:catch the error here for the absent processor
     returnObj = require('./'+ msgType).buildModel(returnObj, result);
     
     return returnObj;

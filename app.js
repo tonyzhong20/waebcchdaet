@@ -21,7 +21,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(favicon());
-app.use(logger({format: 'dev', stream: fs.createWriteStream('./public/logger.log', {flags: 'a'})}));
+app.use(logger({format: 'dev'}));
 app.use(bodyParser.json());
 app.use(bodyParser.text({type:'text/xml'}));
 app.use(bodyParser.urlencoded({
@@ -63,7 +63,6 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
 
 //app.listen(3000);
 

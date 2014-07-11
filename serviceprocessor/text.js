@@ -15,18 +15,16 @@ exports.buildModel = function (returnObj, result)
 	    data.Articles = [];
 	    for (var i = 0 ; i < length ; i++) {
 	    	var ad = latestAds[i];
-	    	console.dir(ad)
 	    	
 	    	data.Articles.push(
 	    		{
-	    			Title : ad["ad:title"][0].substr(0,10),
-	    			Description : ad["ad:description"][0].substr(0,10)
-	    			//PicUrl : ad["pic:pictures"][0] ,
-	    			//Url : ad["ad:title"] ,
+	    			Title : ad.title,
+	    			Description : ad.desc,
+	    			PicUrl : ad.pic,
+	    			Url : ad.url
 	    		}
 	    	);
 	    }
-	    console.dir(data);
 	    return returnObj;
 	}
 	
